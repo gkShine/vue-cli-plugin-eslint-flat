@@ -1,0 +1,27 @@
+{
+  "name": "vue-cli-plugin-eslint-flat",
+  "version": "5.0.8",
+  "description": "ESLint flat config version of @vue/cli-plugin-eslint",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "cli",
+    "eslint",
+    "flat config"
+  ],
+  "author": "gui117",
+  "license": "MIT",
+  "homepage": "https://github.com/gui117/vue-cli-plugin-eslint-flat#readme",
+  "dependencies": {
+    "@vue/cli-shared-utils": "^5.0.8",
+    "eslint-webpack-plugin": "^4.2.0",
+    "globby": "^11.0.2",
+    "webpack": "^5.54.0",
+    "yorkie": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@vue/cli-service": "^5.0.0-0",
+    "eslint": ">=8.50.0"
+  },
+  "packageManager": "pnpm@9.4.0"
+}
