@@ -2,7 +2,7 @@ const fs = require('fs')
 const globby = require('globby')
 
 const renamedArrayArgs = {
-  ext: ['extensions'],
+  ext: ['files'],
   rulesdir: ['rulePaths'],
   plugin: ['overrideConfig', 'plugins'],
   'ignore-pattern': ['overrideConfig', 'ignorePatterns']
@@ -27,11 +27,11 @@ module.exports = async function lint (args = {}, api) {
   const cwd = api.resolve('.')
   const { log, done, exit, chalk, loadModule } = require('@vue/cli-shared-utils')
   const { ESLint } = loadModule('eslint', cwd, true) || require('eslint')
-  const extensions = require('./eslintOptions').extensions(api)
+  const files = require('./eslintOptions').files(api)
 
   const argsConfig = normalizeConfig(args)
   const config = Object.assign({
-    extensions,
+    files,
     fix: true,
     cwd
   }, argsConfig)
@@ -63,7 +63,7 @@ module.exports = async function lint (args = {}, api) {
     // File enumeration
     'cwd',
     'errorOnUnmatchedPattern',
-    'extensions',
+    'files',
     'globInputPaths',
     'ignore',
     'ignorePath',

@@ -4,7 +4,7 @@ const eslintWebpackPlugin = require('eslint-webpack-plugin')
 /** @type {import('@vue/cli-service').ServicePlugin} */
 module.exports = (api, options) => {
   if (options.lintOnSave) {
-    const extensions = require('./eslintOptions').extensions(api)
+    const files = require('./eslintOptions').files(api)
     // Use loadModule to allow users to customize their ESLint dependency version.
     const { resolveModule, loadModule } = require('@vue/cli-shared-utils')
     const cwd = api.getCwd()
@@ -34,7 +34,7 @@ module.exports = (api, options) => {
       /** @type {import('eslint-webpack-plugin').Options & import('eslint').ESLint.Options} */
       const eslintWebpackPluginOptions = {
         // common to both plugin and ESlint
-        extensions,
+        files,
         // ESlint options
         cwd,
         cache: true,
